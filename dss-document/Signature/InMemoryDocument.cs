@@ -68,5 +68,20 @@ namespace EU.Europa.EC.Markt.Dss.Signature
 		{
 			return mimeType;
 		}
-	}
+
+        public static byte[] StringToBytes(string input)
+        {
+            byte[] bytes = new byte[input.Length * sizeof(char)];
+            System.Buffer.BlockCopy(input.ToCharArray(), 0, bytes, 0, bytes.Length);
+            return bytes;
+        }
+
+        public static string BytesToString(byte[] input)
+        {
+            char[] chars = new char[input.Length / sizeof(char)];
+            System.Buffer.BlockCopy(input, 0, chars, 0, input.Length);
+            return new string(chars);
+        }
+
+    }
 }

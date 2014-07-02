@@ -108,6 +108,16 @@ namespace EU.Europa.EC.Markt.Dss.Signature
 		public virtual void SetSignatureFormat(string signatureFormat)
 		{
 			this.SignatureFormat = SignatureFormat.ValueByName(signatureFormat);
-		}	
-	}
+		}
+
+        public void SetSignatureFormat(SignatureFormat format)
+        {
+            this.SignatureFormat = format;
+        }
+
+        public void SetSignatureFormat()
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
